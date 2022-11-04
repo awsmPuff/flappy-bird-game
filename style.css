@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(254, 237, 214, 0.658);
+}
+.game {
+    position: relative;
+    margin-top: 20px;
+    width: 300px;
+    height: 500px;
+    background: url(./images/bg.png) no-repeat;
+    background-size: cover;
+    border: 5px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    gap: 10px;
+    position: absolute;
+    cursor: pointer;
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+    z-index: 5;
+    text-shadow: 2px 2px black;
+}
+.start p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: none;
+}
+.start p:nth-child(2) span {
+    background-color: rgb(225, 168, 70);
+}
+.bird {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: top 100ms linear;
+}
+.pipe {
+    width: 50px;
+    height: 40%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: url(./images/pipe.png) no-repeat;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+.pipe:nth-child(2) {
+    transform: rotate(360deg);
+    height: 30%;
+    top: 70%;
+}
+
+@keyframes move {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+.obstacles {   
+    animation: move 1.5s linear infinite;
+}
+.score {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 480px) {
+    .start p:nth-child(2) {
+        display: none;
+    }
+}
