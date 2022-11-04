@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
-    background-color: rgba(254, 237, 214, 0.658);
+    background-color: rgba(255, 241, 220, 0.658);
 }
 .game {
     position: relative;
@@ -85,7 +85,7 @@ body {
 }
 
 .obstacles {   
-    animation: move 1.5s linear infinite;
+    animation: move 3s linear infinite;
 }
 .score {
     position: absolute;
